@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap');
+*{
+	font-family: 'Open Sans', sans-serif;
+	padding: 0;margin: 0;border: none;outline: none;
+	text-decoration: none;
+	text-transform: capitalize;
+	transition: all .3s linear;
+	box-sizing: border-box;
+}
+.box-container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	background: #E5424B;
+}
+.box-container .box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    width: 720px;
+    padding: 10px;
+    margin: 20px;
+    position: relative;
+	box-shadow:  0 5px 5px #0008;
+	overflow: hidden;
+}
+.box-container .box .image{
+	flex: 1 1 300px;
+}
+.box-container .box .image img{
+	width: 100%;
+	object-fit: cover;
+	filter: drop-shadow(3px 3px 5px #0006);
+}
+.box-container .box .content{
+	flex: 1 1 300px;
+	padding: 10px;
+}
+.box-container .box .content .stars i{
+	color: gold;
+	font-size: 15px;
+}
+.box-container .box .content .stars span{
+	font-size: 15px;
+	color: #666;
+}
+.box-container .box .content h3{
+	font-size: 22px;
+	color: #333;
+	padding: 10px 0;
+}
+.box-container .box .content .price{
+	font-size: 40px;
+	color: #333;
+	font-weight: bolder;
+}
+.box-container .box .content .button{
+	margin-top: 20px;
+}
+.box-container .box .content .button button {
+    margin-right: 15px;
+    height: 35px;
+    width: 140px;
+    outline: none;
+    border: none;
+    font-size: 17px;
+    color: #fff;
+	box-shadow: 0 3px 5px #0008;
+}
+.box-container .box .content .button button:hover{
+	opacity: 0.8;
+	box-shadow: none;
+}
+.box-container .box .content .button button.cart{
+	background: #E5424B;
+}
+.box-container .box .content .button button.buy{
+	background: #333;
+}
+.box .colors{
+	position: absolute;
+	top: 50%;left: 0;
+	transform: translateY(-50%);
+	background: #3333;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+.box .colors span{
+	display: block;
+	height: 20px;width: 20px;
+	border-radius: 50%;
+	box-shadow: 0 3px 5px #0008;
+	position: relative;
+	margin: 10px 15px;
+}
+.box .colors span::before{
+	content: '';
+	position: absolute;
+	top: 50%;left: 50%;
+	transform: translate(-50%,-50%);
+	height: 50%;width: 50%;
+	background: #fff;
+	border-radius: 50%;
+	display: none;
+}
+.box .colors .active::before{
+	display: block;
+}
+
+
+/******   responsive design ***/
+@media(max-width:768px){
+	.box-container .box{
+		flex-flow: column;
+		width: 90%;
+	}
+	.box-container .box .image img{
+		margin-top: 50px;
+	}
+	.box .colors {
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, -40%) rotate(90deg);
+	}
+}
+@media(max-width:450px){
+	.box-container .box .content .button button{
+		width: 100%;
+		margin: 10px 0;
+	}
+}
